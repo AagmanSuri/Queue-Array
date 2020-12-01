@@ -7,7 +7,7 @@ struct Queue
     int front;
     int Rear;
     int *Q;
-}*q;
+};
 
 void Create(struct Queue *q,int size)
 {
@@ -28,7 +28,7 @@ void enqueue(struct Queue *q,int x)
         q->Q[q->Rear]=x;
     }
 }
-int Dequeue()
+int Dequeue(struct Queue *q)
 {
     int x=-1;
     if(q->front==q->Rear)
@@ -45,7 +45,7 @@ int Dequeue()
 void Display(struct Queue q)
 {
     int i;
-    for(i=q.front;i<=q.Rear;i++)
+    for(i=q.front+1;i<=q.Rear;i++)
     {
         printf("%d ",q.Q[i]);
         
